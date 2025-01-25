@@ -78,7 +78,7 @@ install_extension() {
 	uuid=$(get_uuid "$temp_dir/metadata.json")
 	target_dir="$EXT_DIR/$uuid"
 
-	[ -d "$target_dir" ] && die "Extension already installed. Uninstall first."
+	[ -d "$target_dir" ] && printf "${YELLOW}Warning: Extension already installed${NC}\n" && return
 
 	# Install extension
 	mkdir -p "$target_dir"
